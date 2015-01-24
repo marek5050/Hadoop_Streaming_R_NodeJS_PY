@@ -1,10 +1,4 @@
-Title: Hadoop Streaming with Node JS or Python on Yosemite
-Author: Marek Bejda
-Date: JAN 23, 2015
-Email: marek.bejda@gmail.com
-Keywords: java, hadoop, streaming
-
-#Hadoop Streaming
+#Hadoop Streaming with Node JS or Python on Yosemite
 
 [Introduction][intro]  
 [Configuring HADOOP_HOME][HADOOP_HOME]  
@@ -16,7 +10,7 @@ Keywords: java, hadoop, streaming
 [Download the results][RESULTS]  
  
 
-+ References
++ **References**
 + [Apache Hadoop Streaming Official Page](http://hadoop.apache.org/docs/r1.2.1/streaming.html)
 + [Writing an MapReduce Program in Python](http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/)
 + [A wordcount program using R on Apache Hadoop](http://rstudio-pubs-static.s3.amazonaws.com/9217_9d7ed5103a9e4c6db2f8987eac8173d3.html)
@@ -51,7 +45,7 @@ Save and close profile, then execute
 
 	% source ~/.profile
  
-##Locating Hadoop Streaming JAR [JAR]  
+##Locating Hadoop Streaming JAR[JAR]  
  
 Inside the Hadoop Home directory we'll also need to locate the hadoop streaming jar,  ie. hadoop-streaming-2.6.0.jar. 
  
