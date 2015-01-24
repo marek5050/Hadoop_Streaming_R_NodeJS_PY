@@ -1,7 +1,7 @@
 #Hadoop Streaming with Node JS or Python on Yosemite
 
-[Introduction][intro]  
-[Configuring HADOOP_HOME][HADOOP_HOME]  
+[Introduction](#intro) 
+[Configuring HADOOP_HOME](#HADOOP_HOME)
 [Locating Hadoop Streaming JAR ][JAR]  
 [Configure a Mapper][MAPPER]  
 [Configure a Reducer][REDUCER]  
