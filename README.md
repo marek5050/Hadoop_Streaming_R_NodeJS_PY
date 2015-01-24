@@ -1,13 +1,13 @@
 #Hadoop Streaming with Node JS or Python on Yosemite
 
-[Introduction](#intro) 
-[Configuring HADOOP_HOME](#HADOOP_HOME)
-[Locating Hadoop Streaming JAR ][JAR]  
-[Configure a Mapper][MAPPER]  
-[Configure a Reducer][REDUCER]  
-[Download and upload Datasources][DATASOURCES]  
-[Run the Map/Reduce job][RUN]  
-[Download the results][RESULTS]  
+Introduction  
+Configuring HADOOP_HOME   
+Locating Hadoop Streaming JAR    
+Configure a Mapper   
+Configure a Reducer    
+Download and upload Datasources    
+Run the Map/Reduce job   
+Download the results    
  
 
 + **References**
@@ -15,12 +15,12 @@
 + [Writing an MapReduce Program in Python](http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/)
 + [A wordcount program using R on Apache Hadoop](http://rstudio-pubs-static.s3.amazonaws.com/9217_9d7ed5103a9e4c6db2f8987eac8173d3.html)
 
-##Introduction[intro]
+##Introduction
 For the most part I followed the Writing an MapReduce Program in Python tutorial. However there are a couple of differences in configuration due to Brew. I also wanted to test it out with NodeJS. So if you followed the Installing Hadoop on Mavericks tutorial then this is how you would do Hadoop streaming. 
 
 ---
 
-##Configuring HADOOP_HOME[HADOOP_HOME]  
+##Configuring HADOOP_HOME  
 Open up the terminal and check whether you have HADOOP_PATH configured.
 
 % echo $HADOOP_PATH
@@ -45,7 +45,7 @@ Save and close profile, then execute
 
 	% source ~/.profile
  
-##Locating Hadoop Streaming JAR[JAR]  
+##Locating Hadoop Streaming JAR  
  
 Inside the Hadoop Home directory we'll also need to locate the hadoop streaming jar,  ie. hadoop-streaming-2.6.0.jar. 
  
@@ -54,7 +54,7 @@ Inside the Hadoop Home directory we'll also need to locate the hadoop streaming 
 
 You'll need this file to run the streaming job a couple of sections down. 
 
-##Configure a Mapper[MAPPER]  
+##Configure a Mapper  
 
 [code]
 
@@ -113,7 +113,7 @@ To test out the script run
 	
 Every word should be printed with a 1 next to it. 
 
-##Configure a Reducer[REDUCER]  
+##Configure a Reducer  
 
 [code]
 	#!/opt/local/bin/node
@@ -169,7 +169,7 @@ To test the Reducer we have to sort the input first and then pipe it.
 
 With a working mapper and reducer now we can fetch some real data.
 
-##Download and upload Datasources[DATASOURCES]  
+##Download and upload Datasources  
 
 Project Gutenberg has a bunch of free online literature so download a book from there, for example [Historical Tours in and about Boston by American Oil Corporation](http://www.gutenberg.org/ebooks/48054). Use CURL to download the book.
 
@@ -179,7 +179,7 @@ Now we need to upload it to HDFS
 
 	% hdfs dfs -put ./historical_tours.txt .
 	
-##Run the Map/Reduce job[RUN]
+##Run the Map/Reduce job
 Now with everything ready we are ready to combine the 3 elements into a single command. 
 
 	% hadoop jar /usr/local/Cellar/hadoop/2.6.0/libexec/share/hadoop/tools/lib/hadoop-streaming-2.6.0.jar \
@@ -190,7 +190,7 @@ Now with everything ready we are ready to combine the 3 elements into a single c
 	
 ![Successful job](http://amodernstory.files.wordpress.com/2015/01/wpid-screen-shot-2015-01-24-at-12-10-30-pm.png)
 
-##Download the results[results]
+##Download the results
 Head over to the hdfs manager at http://127.0.0.1:50070/explorer.html and navigate to the '/user/<-username->/historical-out/' directory to find the part-00000 file.
 
 The output should have been something like this
